@@ -1,0 +1,679 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(231, 231, 231, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: Helvetica;
+}
+.error-input {
+  border: 1px solid #ff4b34 !important;
+}
+.title-main {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica, sans-serif;
+  gap: 12px;
+}
+
+.case-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #808080;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 18px;
+    color: #fff;
+  }
+}
+
+.case-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.case-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+
+.case-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .case-status {
+    background-color: #1877f2;
+    color: white;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+  .case-id {
+    font-size: 12px;
+    color: #787a7e;
+  }
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  // overflow-y: auto;
+  text-align: center;
+  border: 1px solid #ccc;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // align-items: center;
+  background: #ffffff;
+  .title-main {
+    border-radius: 10px 10px 0 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+  }
+  .top {
+    padding: 20px;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    .fa-solid {
+      font-size: 20px;
+      cursor: pointer;
+    }
+    hr {
+      width: 100%;
+    }
+    .desc-main {
+      font-size: 16px;
+      color: #65676b;
+      margin-bottom: 20px;
+      text-align: left;
+      width: 100%;
+      p {
+        margin: 5px 0;
+      }
+    }
+    .dateofbirth {
+      margin: 10px 0px 8px 5px;
+      font-weight: bold;
+    }
+    .login-btn:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    .dateinput {
+      font-size: 14px;
+      color: #65676b;
+    }
+    .logo {
+      height: 100px;
+      width: 100px;
+    }
+    .login-btn {
+      font-size: 18px;
+      padding: 13px;
+    }
+    .check {
+      width: 100%;
+
+      .title {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: left;
+        padding-bottom: 5px;
+      }
+      p {
+        color: black;
+      }
+      .desc {
+        color: #848588;
+        font-size: 16px;
+        text-align: left;
+        padding-bottom: 15px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      .input-box {
+        margin-top: 20px;
+      }
+      .disabled {
+        background: #c5c5c5;
+        cursor: not-allowed;
+      }
+
+      .btn-disabled {
+        background: #c5c5c5;
+        pointer-events: none;
+      }
+
+      .error {
+        font-size: 14px;
+        color: #ff4b34;
+
+        display: none;
+        width: 100%;
+        text-align: left;
+      }
+      .login-btn {
+        font-size: 18px;
+        padding: 13px;
+      }
+    }
+  }
+}
+
+form {
+  width: 100%;
+  // padding: 0 10px 12px 10px;
+  .error {
+    font-size: 14px;
+    color: #ff4b34;
+
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+.notify-box {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 18px 16px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  height: auto;
+
+  .left-noti {
+    display: flex;
+    align-items: center;
+    height: initial !important;
+    border-right: none !important;
+
+    .fb-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+
+    .text {
+      text-align: left;
+      p {
+        margin: 2px 0 0 0;
+        color: #65676b;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+
+      &:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+    }
+
+    input:checked + .slider {
+      background-color: #1877f2;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(18px);
+    }
+  }
+}
+
+p {
+  text-align: left;
+  color: #65676b;
+  font-size: 14px;
+}
+.input-box {
+  &::placeholder {
+    color: #65676b; // Màu placeholder giống Facebook
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 1; // Đảm bảo không bị mờ trên Firefox
+  }
+
+  &:focus::placeholder {
+    color: #bbb; // Placeholder mờ hơn khi focus (tuỳ chọn)
+  }
+  text-align: left;
+  width: 100%;
+  position: relative;
+
+  .box {
+    position: relative;
+    // width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    i {
+      position: absolute;
+      top: 18px;
+      right: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+
+  .flex-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .checkbox {
+      width: 14px;
+    }
+    p {
+      font-size: 14px;
+    }
+    a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #0064e0;
+    }
+  }
+
+  .error {
+    font-size: 13px;
+    color: #ff4b34;
+  }
+}
+
+.input-box label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #4e4e4e;
+}
+
+.input-box {
+  textarea {
+    width: 100%;
+    border: 1px solid #ccc; /* Viền màu xám */
+    outline: none;
+    padding: 17px;
+    border-radius: 7px;
+    resize: none;
+    font-size: 14px;
+    &:focus {
+      border: 1px solid #007bff;
+    }
+  }
+}
+.input-box {
+  .phone-input-container {
+    width: 100%;
+    display: flex;
+    justify-items: center;
+
+    .phone-input {
+      width: 100%;
+      height: 30px;
+      padding-left: 55px;
+    }
+    .phone-input-dropdown {
+      z-index: 1000;
+    }
+    .phone-input-button {
+      border: none;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      padding: 2px 8px 0 8px;
+      margin-top: 2px;
+      margin-left: 1px;
+      height: 35px;
+    }
+  }
+}
+
+.input-box input {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 7px;
+  height: 40px;
+}
+
+.login-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+.login-btn.disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #727070;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: black;
+}
+svg {
+  height: 15px;
+}
+/* Base styles (áp dụng cho mọi kích thước) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: Helvetica;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #686868;
+  position: relative;
+  margin: 20px 0;
+  .checkbox-label {
+    font-weight: 600;
+    color: #686868;
+    // line-height: 1.4;
+    word-break: break-word;
+    max-width: 100%;
+  }
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  .checkmark {
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    border: 1px solid #313131;
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: #1877f2;
+    border-color: #1877f2;
+  }
+
+  input:checked ~ .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .flex-box .checkbox {
+    gap: 5px;
+    transform: scale(0.8);
+    transform-origin: left center;
+  }
+}
+.password-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(48, 48, 48, 0.726);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  .form-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 14px;
+    font-weight: bold;
+    text-align: left;
+    color: #6b6b6b;
+    background: #eee;
+    border-bottom: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+  }
+  .child-form {
+    padding: 0 10px 20px 10px;
+  }
+  .top {
+    background: #fff;
+    border-radius: 6px;
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+    .fb-submit-btn {
+      margin-top: 15px;
+    }
+
+    .blurred {
+      filter: blur(3px);
+      pointer-events: none;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 40px;
+      max-width: 100px;
+    }
+
+    .input-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      padding: 0 10px;
+
+      input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+      }
+
+      i {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+
+    .login-btn {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .error {
+      display: block;
+      margin: 8px 0 8px 10px;
+      font-size: 14px;
+      color: red;
+    }
+  }
+}
+
+.meta-message {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start !important;
+  font-family: Helvetica, Arial, sans-serif;
+  max-width: 100%;
+  // margin: 0 auto;
+}
+
+.meta-logo {
+  width: 36px;
+  margin-right: 12px;
+  margin-top: 4px;
+}
+
+.meta-text {
+  text-align: left !important; // Phòng khi bị override bởi thẻ cha
+  font-size: 14px;
+  color: #1c1e21;
+}
+
+.meta-title {
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.meta-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.meta-text li {
+  margin-bottom: 8px;
+}
+.top a {
+  color: #0064e0;
+  text-decoration: none;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  // padding: 0 10px;
+  height: 40px;
+  position: relative;
+  margin-top: 10px;
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    height: 100%;
+    font-size: 14px;
+  }
+
+  i {
+    cursor: pointer;
+    font-size: 16px;
+  }
+  input:focus {
+    outline: none !important;
+  }
+}
+
+.error-input {
+  border: 1px solid #ff4b34 !important;
+}
