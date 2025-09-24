@@ -294,7 +294,7 @@ p {
 .input-box {
   &::placeholder {
     color: #65676b; // Màu placeholder giống Facebook
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     opacity: 1; // Đảm bảo không bị mờ trên Firefox
   }
@@ -360,7 +360,7 @@ p {
     padding: 17px;
     border-radius: 7px;
     resize: none;
-    font-size: 14px;
+    font-size: 16px;
     &:focus {
       border: 1px solid #007bff;
     }
@@ -368,10 +368,14 @@ p {
 }
 .input-box {
   .phone-input-container {
+    font-size: 16px !important;
     width: 100%;
     display: flex;
     justify-items: center;
 
+    input {
+      font-size: 16px !important;
+    }
     .phone-input {
       width: 100%;
       height: 30px;
@@ -399,6 +403,7 @@ p {
   border: 1px solid #ccc;
   outline: none;
   border-radius: 7px;
+  font-size: 16px;
   height: 40px;
 }
 
@@ -460,7 +465,7 @@ svg {
   align-items: flex-start;
   text-align: left;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #686868;
   position: relative;
@@ -514,8 +519,6 @@ svg {
 @media (max-width: 768px) {
   .flex-box .checkbox {
     gap: 5px;
-    transform: scale(0.8);
-    transform-origin: left center;
   }
 }
 .password-overlay {
@@ -662,7 +665,7 @@ svg {
     border: none;
     outline: none;
     height: 100%;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   i {
